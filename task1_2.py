@@ -18,3 +18,4 @@ for i in range(n_points):
     y = np.random.rand()*M
     dataset.append(Point(x, y))
 
+# selection of points
