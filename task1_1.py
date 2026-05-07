@@ -1,15 +1,26 @@
+#
+# DAS
+# Task 1.1
+# Ivan Colangelo, Nicholas Gioia, Alexandru Zaporojanu
+# Bologna, 09/06/26
+#
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
-
+import Parameters as par
 np.random.seed(0)
 
 
 N = 5
 IN = np.eye(N)
-G = nx.path_graph(n=N-1)
-G = nx.star_graph(n=N-1)
-#G = nx.cycle_graph(n=N)
+if par.TASK_1_1_Path:
+    G = nx.path_graph(n=N)
+elif par.TASK_1_1_Star:
+    G = nx.star_graph(n=N-1)
+elif par.TASK_1_1_Cycle:
+    G = nx.cycle_graph(n=N)
+else:
+    raise(ValueError('Error: One Flag must be True'))
 
 Adj = nx.adjacency_matrix(G).toarray()
 

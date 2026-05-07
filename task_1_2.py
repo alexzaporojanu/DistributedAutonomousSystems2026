@@ -1,7 +1,6 @@
 """
 Task 1.2 - Centralized Classification via Logistic Regression
 =============================================================
-Configurato esclusivamente per i gruppi PARI (Even).
 
 Feature mappings:
   Parabola  : ϕ(x) = [x1, x2, x1²]
