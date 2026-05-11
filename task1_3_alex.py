@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from task1_1 import weightedAdj as W
-from task1_2 import phi_parabola, logistic_grad, generate_dataset
+from task_1_2 import phi_parabola, logistic_grad, generate_dataset, misclassification_rate
 
 G=6
 P=40 + (G % 3) * 10
@@ -127,3 +127,5 @@ if __name__ == "__main__":
 
     # The final centralized model can be estimated as the mean of all agents' weights
     final_wb = np.mean(z, axis=0)
+    miss = misclassification_rate(final_wb, agents[0]['Phi'], agents[0]['y'])
+    print(f"  Misclassified   = {miss:.2f}%\n")
